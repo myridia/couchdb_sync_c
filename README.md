@@ -270,6 +270,8 @@ PLAN.md                 PouchDB-to-C/SQLite mapping and next steps
 
 ## Documentation
 
+- [How to Use](docs/howtouse.md) — step-by-step setup, build, integration, and usage guide
+- [Tutorial](docs/tutorial.md) — detailed step-by-step tutorial to build a simple app using this library
 - [API Reference](docs/api.md) — public types, functions, behavior, ownership, and examples
 - [PouchDB Mapping Notes](docs/pouchdb-mapping.md) — inspected PouchDB modules and current C mapping/status
 - [PLAN.md](PLAN.md) — implementation plan, schema mapping, and next steps

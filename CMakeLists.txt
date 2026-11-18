@@ -29,6 +29,9 @@ target_link_libraries(couchdb_sync_c PUBLIC CURL::libcurl SQLite::SQLite3)
 add_executable(couchdb_sync_example examples/pull_once.c)
 target_link_libraries(couchdb_sync_example PRIVATE couchdb_sync_c)
 
+add_executable(simple_sync examples/simple_sync.c)
+target_link_libraries(simple_sync PRIVATE couchdb_sync_c)
+
 include(CTest)
 if(BUILD_TESTING)
     add_subdirectory(tests)
