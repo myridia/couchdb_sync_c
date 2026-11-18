@@ -17,6 +17,8 @@ A C library project to sync documents between a CouchDB server and local SQLite 
 - `include/` — public API headers
 - `src/` — implementation (`couchdb_sync`, `http_curl`, `store_sqlite`, `checkpointer`, `replication_id`, `sync_pull`, `sync_push`, `rev`, `util`, `internal.h`)
 - `examples/` — sample usage
+- `tests/` — CTest-based tests
+- `ask.sh`, `ask.d/` — task runner (`1` build, `2` test)
 - `docs/` — design/reference notes (`pouchdb-mapping.md`)
 - `PLAN.md` — mapping from PouchDB replication/storage to C + SQLite
 

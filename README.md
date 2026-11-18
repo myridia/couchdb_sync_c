@@ -21,11 +21,21 @@ Separated replication APIs, similar to PouchDB's direction-specific operations:
 - `sqlite3` for local storage
 - JSON parsing: current code uses minimal internal parsing for MVP fields; a full JSON library can replace it for complete document handling
 
+## Build and test
+
+Requires CMake, a C compiler, `libcurl`, and `sqlite3` development packages.
+
+- Configure and build: `cmake -S . -B build -DBUILD_TESTING=ON && cmake --build build`
+- Run tests: `ctest --test-dir build --output-on-failure`
+- Task runner: `./ask.sh` (or `sh ask.sh`), with tasks in `ask.d/` (`1` build, `2` test)
+
 ## Layout
 
 - `include/` public headers
 - `src/` implementation (`http_curl`, `store_sqlite`, `checkpointer`, `replication_id`, `sync_pull`, `sync_push`, `rev`, `util`)
 - `examples/` usage examples
+- `tests/` basic API tests (CTest)
+- `ask.sh`, `ask.d/` task runner
 - `docs/` design/reference notes
 - `PLAN.md` PouchDB-to-C/SQLite mapping
 

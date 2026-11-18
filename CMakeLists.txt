@@ -21,16 +21,15 @@ target_include_directories(couchdb_sync_c
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-find_package(CURL)
-find_package(SQLite3)
+find_package(CURL REQUIRED)
+find_package(SQLite3 REQUIRED)
 
-if(CURL_FOUND)
-    target_link_libraries(couchdb_sync_c PUBLIC CURL::libcurl)
-endif()
-
-if(SQLite3_FOUND)
-    target_link_libraries(couchdb_sync_c PUBLIC SQLite::SQLite3)
-endif()
+target_link_libraries(couchdb_sync_c PUBLIC CURL::libcurl SQLite::SQLite3)
 
 add_executable(couchdb_sync_example examples/pull_once.c)
 target_link_libraries(couchdb_sync_example PRIVATE couchdb_sync_c)
+
+include(CTest)
+if(BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
